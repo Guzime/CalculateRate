@@ -1,5 +1,7 @@
 package ru.liga.model;
 
+import ru.liga.util.ConstantsRate;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -22,7 +24,7 @@ public class Rate {
 
     @Override
     public String toString() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EE dd.MM.yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ConstantsRate.OUT_PATTERN_DT);
         return formatter.format(date).toUpperCase() + " - " + String.format("%.4f", rate);
     }
 }

@@ -1,12 +1,15 @@
-package ru.liga.util;
+package ru.liga.service;
 
-import ru.liga.model.OldRate;
+import ru.liga.model.Rate;
+import ru.liga.util.ConstantsRate;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class CommandConsole {
+public class HandlerCommandConsole {
 
-    public static void commandHandler() {
+    public void commandHandler() {
         Scanner scanner = new Scanner(System.in);
         String strInputs;
         System.out.println("Для завершения введите exit");
@@ -19,10 +22,13 @@ public class CommandConsole {
                 switch (commandWords[1]) {
                     case "TRY":
                         path = ConstantsRate.PATH_TRY;
+                        break;
                     case "EUR":
                         path = ConstantsRate.PATH_EUR;
+                        break;
                     case "USD":
                         path = ConstantsRate.PATH_USD;
+                        break;
                 }
                 switch (commandWords[2]) {
                     case "tomorrow":
@@ -31,18 +37,23 @@ public class CommandConsole {
                 }
 
                 if (path != null && method != null) {
-                    displayRate(path, method);
+                    CalcRate calcRate = new HandlerListRateAVG();
+                    calculateRate(calcRate, path, method);
                 }
             }
         } while (!strInputs.equals("exit"));
     }
 
-    public static void displayRate(String path, String method) {
-        OldRate calculateRate = new OldRate(path);
-        if (method.equals("tomorrow")) {
-            System.out.println(calculateRate.oneDayRate());
-        } else {
-            System.out.println(calculateRate.weekRate());
+    public void calculateRate(CalcRate calcRate, String path, String method) {
+        switch (method) {
+            case "week":
+                calcRate.printRatesToConsole(calcRate.weekRate(calcRate.getRateFromFile(path)));
+                break;
+            case "tomorrow":
+                List<Rate> listRate = new ArrayList<>();
+                listRate.add(calcRate.oneDayRate(calcRate.getRateFromFile(path)));
+                calcRate.printRatesToConsole(listRate);
+                break;
         }
     }
 }
