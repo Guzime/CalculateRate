@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f76478e5-905d-4cc1-8944-051f63f34c6b" name="Changes" comment="Worked version (with refactor)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/model/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/model/Rate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/repository/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/repository/FileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/CalcRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/CalcRate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java" afterDir="false" />
-    </list>
+    <list default="true" id="f76478e5-905d-4cc1-8944-051f63f34c6b" name="Changes" comment="add JavaDoc" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656283505560</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add JavaDoc">
+      <created>1656284750297</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656284750297</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,7 +123,8 @@
     <MESSAGE value="Done" />
     <MESSAGE value="Worked version (no refactor)" />
     <MESSAGE value="Worked version (with refactor)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Worked version (with refactor)" />
+    <MESSAGE value="add JavaDoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="add JavaDoc" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
