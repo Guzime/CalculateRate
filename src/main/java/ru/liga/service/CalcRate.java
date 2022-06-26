@@ -4,6 +4,9 @@ import ru.liga.model.Rate;
 
 import java.util.List;
 
+/**
+ * Интерфейс для работы с курсами
+ */
 public interface CalcRate {
     List<Rate> getRateFromFile(String path);
 

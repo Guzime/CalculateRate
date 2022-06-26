@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f76478e5-905d-4cc1-8944-051f63f34c6b" name="Changes" comment="Worked version (no refactor)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/CalcRate.java" afterDir="false" />
+    <list default="true" id="f76478e5-905d-4cc1-8944-051f63f34c6b" name="Changes" comment="Worked version (with refactor)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/model/OldRate.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/model/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/model/Rate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/util/CommandConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/util/ConstantsRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/util/ConstantsRate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/repository/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/repository/FileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/CalcRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/CalcRate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656249413458</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Worked version (with refactor)">
+      <created>1656283505560</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656283505560</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,7 +122,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Done" />
     <MESSAGE value="Worked version (no refactor)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Worked version (no refactor)" />
+    <MESSAGE value="Worked version (with refactor)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked version (with refactor)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

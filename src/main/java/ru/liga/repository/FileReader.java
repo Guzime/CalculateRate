@@ -6,6 +6,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class FileReader {
+    /**
+     * Считывание файла csv из директории resources
+     *
+     * @param path путь до файла
+     * @return массив считанных строк в количестве ConstantsRate.DAYS_OF_RATE
+     */
     public String[] getRateFromFile(String path) {
         String[] resultString = new String[ConstantsRate.DAYS_OF_RATE];
         try {

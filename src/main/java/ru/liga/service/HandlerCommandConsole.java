@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class HandlerCommandConsole {
-
+    /**
+     * Обработчик комманд из консоли
+     */
     public void commandHandler() {
         Scanner scanner = new Scanner(System.in);
         String strInputs;
@@ -44,6 +46,13 @@ public class HandlerCommandConsole {
         } while (!strInputs.equals("exit"));
     }
 
+    /**
+     * Непосредственный вызов нужной нам функции
+     *
+     * @param calcRate Интерфейс который реализует методы работы с курсами
+     * @param path     Путь до CSV файла с курсами
+     * @param method   Вызываемый метод
+     */
     public void calculateRate(CalcRate calcRate, String path, String method) {
         switch (method) {
             case "week":

@@ -22,6 +22,11 @@ public class Rate {
         return date;
     }
 
+    /**
+     * Вывводиться курс в формате EE dd.MM.yyyy - number(курс на этот день)
+     *
+     * @return строка в нужном формате
+     */
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ConstantsRate.OUT_PATTERN_DT);
