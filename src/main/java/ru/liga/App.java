@@ -2,7 +2,7 @@ package ru.liga;
 
 /**
  * Hello world!
- *
+ * раз два три
  */
 public class App 
 {
