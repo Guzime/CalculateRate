@@ -21,6 +21,7 @@ public class HandlerListRateAVG implements CalcRate, GetRate, ShowRate {
      * @param path Путь до файла
      * @return Список курсов
      */
+    @Override
     public List<Rate> parseRateFromFile(String path) {
         FileReader fileReader = new FileReader();
         List<Rate> listRate = new ArrayList<>();

@@ -8,7 +8,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class HandlerCommandConsole {
-    private CalcRate calcRate;
+    private final CalcRate calcRate;
+
 
     public HandlerCommandConsole(CalcRate calcRate) {
         this.calcRate = calcRate;
@@ -24,33 +25,68 @@ public class HandlerCommandConsole {
         do {
             strInputs = scanner.nextLine();
             String[] commandWords = strInputs.split(" ");
-            String path = null;
-            String method = null;
+            String path;
             if (commandWords.length == 3 && commandWords[0].equals("rate")) {
-                switch (commandWords[1]) {
-                    case "TRY":
-                        path = ConstantsRate.PATH_TRY;
-                        break;
-                    case "EUR":
-                        path = ConstantsRate.PATH_EUR;
-                        break;
-                    case "USD":
-                        path = ConstantsRate.PATH_USD;
-                        break;
-                }
+                path = getPath(commandWords[1]);
                 if (path != null) {
                     switch (commandWords[2]) {
                         case "tomorrow":
-                            List<Rate> listRate = new ArrayList<>();
-                            listRate.add(calcRate.oneDayRate(((HandlerListRateAVG) calcRate).parseRateFromFile(path)));
-                            ((HandlerListRateAVG) calcRate).printRatesToConsole(listRate);
+                            callOneDayRate(path);
                             break;
                         case "week":
-                            ((HandlerListRateAVG) calcRate).printRatesToConsole(calcRate.weekRate(((HandlerListRateAVG) calcRate).parseRateFromFile(path)));
+                            callWeekRate(path);
                             break;
+                        default:
+                            System.out.println("Unexpected value: " + commandWords[2]);
                     }
                 }
+            } else {
+                System.out.println("Unexpected count command!");
             }
         } while (!strInputs.equals("exit"));
+    }
+
+    /**
+     * Вызов расчета курса на неделю
+     *
+     * @param path
+     */
+    private void callWeekRate(String path) {
+        ((HandlerListRateAVG) calcRate).printRatesToConsole(calcRate.weekRate(((HandlerListRateAVG) calcRate).parseRateFromFile(path)));
+    }
+
+    /**
+     * Вызов расчета курса на день
+     *
+     * @param path
+     */
+    private void callOneDayRate(String path) {
+        List<Rate> listRate = new ArrayList<>();
+        listRate.add(calcRate.oneDayRate(((HandlerListRateAVG) calcRate).parseRateFromFile(path)));
+        ((HandlerListRateAVG) calcRate).printRatesToConsole(listRate);
+    }
+
+    /**
+     * Получение пути до файла из консоли
+     *
+     * @param commandWord входная строка
+     * @return путь до файла
+     */
+    private String getPath(String commandWord) {
+        String path = null;
+        switch (commandWord) {
+            case "TRY":
+                path = ConstantsRate.PATH_TRY;
+                break;
+            case "EUR":
+                path = ConstantsRate.PATH_EUR;
+                break;
+            case "USD":
+                path = ConstantsRate.PATH_USD;
+                break;
+            default:
+                System.out.println("Unexpected value: " + commandWord);
+        }
+        return path;
     }
 }
