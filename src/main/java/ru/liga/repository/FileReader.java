@@ -11,6 +11,7 @@ public class FileReader {
      *
      * @param path путь до файла
      * @return массив считанных строк в количестве ConstantsRate.DAYS_OF_RATE + 1
+     * @throws RuntimeException кидаю
      */
     public String[] readFile(String path) {
         String[] resultString = new String[ConstantsRate.DAYS_OF_RATE + 1];

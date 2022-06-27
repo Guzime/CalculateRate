@@ -38,6 +38,7 @@ public class HandlerCommandConsole {
      *
      * @param scanner Сканер, считывающий строку из консоли
      * @return Считанная строка
+     * @throws IllegalStateException кидаю
      */
     private String parseCommand(Scanner scanner) {
         String strInputs;
