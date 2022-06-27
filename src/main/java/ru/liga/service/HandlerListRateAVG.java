@@ -3,6 +3,8 @@ package ru.liga.service;
 import ru.liga.model.Rate;
 import ru.liga.util.ConstantsRate;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +16,12 @@ public class HandlerListRateAVG implements CalcRate {
      * @return Курс посчитанный по среднеарифметическому всех остальных курсов в классе
      */
     public Rate oneDayRate(List<Rate> listRate) {
-        Double doubleRate = 0d;
+        BigDecimal numRate = BigDecimal.ZERO;
 
         for (int i = 0; i < ConstantsRate.DAYS_OF_RATE; i++) {
-            doubleRate += listRate.get(i).getRate();
+            numRate = numRate.add(listRate.get(i).getRate());
         }
-        return new Rate(listRate.get(0).getDate().plusDays(1), doubleRate / ConstantsRate.DAYS_OF_RATE);
+        return new Rate(listRate.get(0).getDate().plusDays(1), numRate.divide(BigDecimal.valueOf(ConstantsRate.DAYS_OF_RATE), 4, RoundingMode.HALF_UP));
     }
 
     /**

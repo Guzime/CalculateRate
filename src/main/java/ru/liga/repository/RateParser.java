@@ -3,6 +3,7 @@ package ru.liga.repository;
 import ru.liga.model.Rate;
 import ru.liga.util.ConstantsRate;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class RateParser {
                 temp = rows[i].split(";");
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ConstantsRate.IN_PATTERN_DT);
                 Rate rate = new Rate(LocalDate.parse(temp[indexDate], formatter),
-                        Double.parseDouble(temp[indexRate]
+                        new BigDecimal(temp[indexRate]
                                 .replace(',', '.')
                                 .replace('\"', ' ')
                                 .trim()));

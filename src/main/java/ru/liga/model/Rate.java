@@ -2,19 +2,20 @@ package ru.liga.model;
 
 import ru.liga.util.ConstantsRate;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Rate {
     private final LocalDate date;
-    private final Double rate;
+    private final BigDecimal rate;
 
-    public Rate(LocalDate date, Double rate) {
+    public Rate(LocalDate date, BigDecimal rate) {
         this.date = date;
         this.rate = rate;
     }
 
-    public Double getRate() {
+    public BigDecimal getRate() {
         return rate;
     }
 
