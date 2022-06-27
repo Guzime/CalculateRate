@@ -21,23 +21,37 @@ public class HandlerListRateAVG implements CalcRate {
      * @param path Путь до файла
      * @return Список курсов
      */
-    public List<Rate> getRateFromFile(String path) {
+    public List<Rate> parseRateFromFile(String path) {
         FileReader fileReader = new FileReader();
         List<Rate> listRate = new ArrayList<>();
-        String[] rows = fileReader.getRateFromFile(path);
+        String[] rows = fileReader.readFile(path);
         String[] temp;
-        LocalDate lt;
-        for (int i = 0; i < ConstantsRate.DAYS_OF_RATE; i++) {
-            temp = rows[i].split(";");
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ConstantsRate.IN_PATTERN_DT);
-            Rate rate = new Rate(LocalDate.parse(temp[0], formatter), Double.parseDouble(temp[1]));
-            listRate.add(rate);
+        int indexRate = 0;
+        int indexDate = 0;
+        for (int i = 0; i < ConstantsRate.DAYS_OF_RATE + 1; i++) {
+            if (i == 0) {
+                temp = rows[i].split(";");
+                for (int j = 0; j < temp.length; j++) {
+                    switch (temp[j]) {
+                        case "data":
+                            indexDate = j;
+                        case "curs":
+                            indexRate = j;
+                    }
+                }
+            } else {
+                temp = rows[i].split(";");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ConstantsRate.IN_PATTERN_DT);
+                Rate rate = new Rate(LocalDate.parse(temp[indexDate], formatter), Double.parseDouble(temp[indexRate].replace(',', '.').replace('\"', ' ').trim()));
+                listRate.add(rate);
+            }
+
         }
         return listRate;
     }
 
     /**
-     * Выввод всех курсов в списке
+     * Вывод всех курсов в списке
      *
      * @param listRate Список курсов
      */
@@ -51,7 +65,7 @@ public class HandlerListRateAVG implements CalcRate {
      * Курс на один следующий день
      *
      * @param listRate Список курсов за неделю
-     * @return Курс расчитанный по среднеарифметическому всех остальных курсов в классе
+     * @return Курс посчитанный по среднеарифметическому всех остальных курсов в классе
      */
     public Rate oneDayRate(List<Rate> listRate) {
         Double doubleRate = 0d;
@@ -66,7 +80,7 @@ public class HandlerListRateAVG implements CalcRate {
      * Курс на неделю по методу среднего арифметического
      *
      * @param listRate Список курсов за неделю
-     * @return Список курсов на следуюущю неделю
+     * @return Список курсов на следующую неделю
      */
     public List<Rate> weekRate(List<Rate> listRate) {
         List<Rate> resultRate = new ArrayList<>();

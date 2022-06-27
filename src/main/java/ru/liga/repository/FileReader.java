@@ -10,32 +10,16 @@ public class FileReader {
      * Считывание файла csv из директории resources
      *
      * @param path путь до файла
-     * @return массив считанных строк в количестве ConstantsRate.DAYS_OF_RATE
+     * @return массив считанных строк в количестве ConstantsRate.DAYS_OF_RATE + 1
      */
-    public String[] getRateFromFile(String path) {
-        String[] resultString = new String[ConstantsRate.DAYS_OF_RATE];
+    public String[] readFile(String path) {
+        String[] resultString = new String[ConstantsRate.DAYS_OF_RATE + 1];
         try {
             BufferedReader br = new BufferedReader(new java.io.FileReader(path));
             String line;
-            int indexRate = 0;
-            int indexDate = 0;
             int countLine = 0;
             while ((line = br.readLine()) != null && countLine < ConstantsRate.DAYS_OF_RATE + 1) {
-                if (countLine == 0) {
-                    String[] rateInfo = line.split(";");
-                    for (int i = 0; i < rateInfo.length; i++) {
-                        switch (rateInfo[i]) {
-                            case "data":
-                                indexDate = i;
-                            case "curs":
-                                indexRate = i;
-                        }
-                    }
-                }
-                if (countLine > 0) {
-                    String[] rateInfo = line.split(";");
-                    resultString[countLine - 1] = rateInfo[indexDate] + ";" + rateInfo[indexRate].replace(',', '.').replace('\"', ' ').trim();
-                }
+                resultString[countLine] = line;
                 countLine++;
             }
         } catch (IOException e) {

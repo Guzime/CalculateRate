@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class HandlerCommandConsole {
     /**
-     * Обработчик комманд из консоли
+     * Обработчик команд из консоли
      */
     public void commandHandler() {
         Scanner scanner = new Scanner(System.in);
@@ -56,11 +56,11 @@ public class HandlerCommandConsole {
     public void calculateRate(CalcRate calcRate, String path, String method) {
         switch (method) {
             case "week":
-                calcRate.printRatesToConsole(calcRate.weekRate(calcRate.getRateFromFile(path)));
+                calcRate.printRatesToConsole(calcRate.weekRate(calcRate.parseRateFromFile(path)));
                 break;
             case "tomorrow":
                 List<Rate> listRate = new ArrayList<>();
-                listRate.add(calcRate.oneDayRate(calcRate.getRateFromFile(path)));
+                listRate.add(calcRate.oneDayRate(calcRate.parseRateFromFile(path)));
                 calcRate.printRatesToConsole(listRate);
                 break;
         }
