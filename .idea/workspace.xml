@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f76478e5-905d-4cc1-8944-051f63f34c6b" name="Changes" comment="Little fix out_pattern_dt">
+    <list default="true" id="f76478e5-905d-4cc1-8944-051f63f34c6b" name="Changes" comment="5, 7, 8 - fixed">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/GetRate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/ShowRate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/model/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/model/Rate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/repository/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/repository/FileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/CalcRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/CalcRate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java" afterDir="false" />
     </list>
@@ -123,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656323126222</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="5, 7, 8 - fixed">
+      <created>1656333826146</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1656333826146</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,7 +153,8 @@
     <MESSAGE value="Worked version (with refactor)" />
     <MESSAGE value="add JavaDoc" />
     <MESSAGE value="Little fix out_pattern_dt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little fix out_pattern_dt" />
+    <MESSAGE value="5, 7, 8 - fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="5, 7, 8 - fixed" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

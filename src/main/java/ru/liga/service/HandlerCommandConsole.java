@@ -8,13 +8,19 @@ import java.util.List;
 import java.util.Scanner;
 
 public class HandlerCommandConsole {
+    private CalcRate calcRate;
+
+    public HandlerCommandConsole(CalcRate calcRate) {
+        this.calcRate = calcRate;
+    }
+
     /**
      * Обработчик команд из консоли
      */
     public void commandHandler() {
         Scanner scanner = new Scanner(System.in);
         String strInputs;
-        System.out.println("Для завершения введите exit");
+        System.out.println("Для завершения введите exit!");
         do {
             strInputs = scanner.nextLine();
             String[] commandWords = strInputs.split(" ");
@@ -32,37 +38,19 @@ public class HandlerCommandConsole {
                         path = ConstantsRate.PATH_USD;
                         break;
                 }
-                switch (commandWords[2]) {
-                    case "tomorrow":
-                    case "week":
-                        method = commandWords[2];
-                }
-
-                if (path != null && method != null) {
-                    CalcRate calcRate = new HandlerListRateAVG();
-                    calculateRate(calcRate, path, method);
+                if (path != null) {
+                    switch (commandWords[2]) {
+                        case "tomorrow":
+                            List<Rate> listRate = new ArrayList<>();
+                            listRate.add(calcRate.oneDayRate(((HandlerListRateAVG) calcRate).parseRateFromFile(path)));
+                            ((HandlerListRateAVG) calcRate).printRatesToConsole(listRate);
+                            break;
+                        case "week":
+                            ((HandlerListRateAVG) calcRate).printRatesToConsole(calcRate.weekRate(((HandlerListRateAVG) calcRate).parseRateFromFile(path)));
+                            break;
+                    }
                 }
             }
         } while (!strInputs.equals("exit"));
-    }
-
-    /**
-     * Непосредственный вызов нужной нам функции
-     *
-     * @param calcRate Интерфейс который реализует методы работы с курсами
-     * @param path     Путь до CSV файла с курсами
-     * @param method   Вызываемый метод
-     */
-    public void calculateRate(CalcRate calcRate, String path, String method) {
-        switch (method) {
-            case "week":
-                calcRate.printRatesToConsole(calcRate.weekRate(calcRate.parseRateFromFile(path)));
-                break;
-            case "tomorrow":
-                List<Rate> listRate = new ArrayList<>();
-                listRate.add(calcRate.oneDayRate(calcRate.parseRateFromFile(path)));
-                calcRate.printRatesToConsole(listRate);
-                break;
-        }
     }
 }

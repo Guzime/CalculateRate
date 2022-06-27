@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HandlerListRateAVG implements CalcRate {
+public class HandlerListRateAVG implements CalcRate, GetRate, ShowRate {
 
     public HandlerListRateAVG() {
 
