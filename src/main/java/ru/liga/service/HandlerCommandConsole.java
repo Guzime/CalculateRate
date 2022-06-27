@@ -1,6 +1,7 @@
 package ru.liga.service;
 
 import ru.liga.model.Rate;
+import ru.liga.repository.RateParser;
 import ru.liga.util.ConstantsRate;
 
 import java.util.ArrayList;
@@ -9,7 +10,8 @@ import java.util.Scanner;
 
 public class HandlerCommandConsole {
     private final CalcRate calcRate;
-
+    private final RateParser rateParser = new RateParser();
+    private final DisplayConsole displayConsole = new DisplayConsole();
 
     public HandlerCommandConsole(CalcRate calcRate) {
         this.calcRate = calcRate;
@@ -31,6 +33,12 @@ public class HandlerCommandConsole {
         } while (!strInputs.equals("exit"));
     }
 
+    /**
+     * Парсинг команд построчно
+     *
+     * @param scanner Сканер, считывающий строку из консоли
+     * @return Считанная строка
+     */
     private String parseCommand(Scanner scanner) {
         String strInputs;
         strInputs = scanner.nextLine();
@@ -66,7 +74,7 @@ public class HandlerCommandConsole {
      * @param path путь до файла
      */
     private void callWeekRate(String path) {
-        ((HandlerListRateAVG) calcRate).printRatesToConsole(calcRate.weekRate(((HandlerListRateAVG) calcRate).parseRateFromFile(path)));
+        displayConsole.printRatesToConsole(calcRate.weekRate(rateParser.parseRateFromFile(path)));
     }
 
     /**
@@ -76,8 +84,8 @@ public class HandlerCommandConsole {
      */
     private void callOneDayRate(String path) {
         List<Rate> listRate = new ArrayList<>();
-        listRate.add(calcRate.oneDayRate(((HandlerListRateAVG) calcRate).parseRateFromFile(path)));
-        ((HandlerListRateAVG) calcRate).printRatesToConsole(listRate);
+        listRate.add(calcRate.oneDayRate(rateParser.parseRateFromFile(path)));
+        displayConsole.printRatesToConsole(listRate);
     }
 
     /**

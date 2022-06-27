@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f76478e5-905d-4cc1-8944-051f63f34c6b" name="Changes" comment="done">
+    <list default="true" id="f76478e5-905d-4cc1-8944-051f63f34c6b" name="Changes" comment="fix exception">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/repository/RateParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/DisplayConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/GetRate.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/ShowRate.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656341086674</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix exception">
+      <created>1656345798814</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1656345798814</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,7 +178,8 @@
     <MESSAGE value="5, 7, 8 - fixed" />
     <MESSAGE value="3, 4 - fixed" />
     <MESSAGE value="done" />
-    <option name="LAST_COMMIT_MESSAGE" value="done" />
+    <MESSAGE value="fix exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix exception" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
