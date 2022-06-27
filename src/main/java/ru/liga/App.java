@@ -9,5 +9,4 @@ public class App {
         HandlerCommandConsole handlerCommandConsole = new HandlerCommandConsole(new HandlerListRateAVG());
         handlerCommandConsole.commandHandler();
     }
-
 }

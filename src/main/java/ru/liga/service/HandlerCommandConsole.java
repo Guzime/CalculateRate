@@ -20,36 +20,50 @@ public class HandlerCommandConsole {
      */
     public void commandHandler() {
         Scanner scanner = new Scanner(System.in);
-        String strInputs;
+        String strInputs = "";
         System.out.println("Для завершения введите exit!");
         do {
-            strInputs = scanner.nextLine();
-            String[] commandWords = strInputs.split(" ");
-            String path;
-            if (commandWords.length == 3 && commandWords[0].equals("rate")) {
-                path = getPath(commandWords[1]);
-                if (path != null) {
-                    switch (commandWords[2]) {
-                        case "tomorrow":
-                            callOneDayRate(path);
-                            break;
-                        case "week":
-                            callWeekRate(path);
-                            break;
-                        default:
-                            System.out.println("Unexpected value: " + commandWords[2]);
-                    }
-                }
-            } else {
-                System.out.println("Unexpected count command!");
+            try {
+                strInputs = parseCommand(scanner);
+            } catch (IllegalStateException e) {
+                System.out.println(e.getMessage());
             }
         } while (!strInputs.equals("exit"));
+    }
+
+    private String parseCommand(Scanner scanner) {
+        String strInputs;
+        strInputs = scanner.nextLine();
+        String[] commandWords = strInputs.split(" ");
+        String path;
+        if (commandWords.length == 3) {
+            if (!commandWords[0].equals("rate")) {
+                throw new IllegalStateException("Unexpected value: " + commandWords[0]);
+            }
+            path = getPath(commandWords[1]);
+            if (path != null) {
+                switch (commandWords[2]) {
+                    case "tomorrow":
+                        callOneDayRate(path);
+                        break;
+                    case "week":
+                        callWeekRate(path);
+                        break;
+
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + commandWords[2]);
+                }
+            }
+        } else {
+            throw new IllegalStateException("Unexpected count command!");
+        }
+        return strInputs;
     }
 
     /**
      * Вызов расчета курса на неделю
      *
-     * @param path
+     * @param path путь до файла
      */
     private void callWeekRate(String path) {
         ((HandlerListRateAVG) calcRate).printRatesToConsole(calcRate.weekRate(((HandlerListRateAVG) calcRate).parseRateFromFile(path)));
@@ -58,7 +72,7 @@ public class HandlerCommandConsole {
     /**
      * Вызов расчета курса на день
      *
-     * @param path
+     * @param path путь до файла
      */
     private void callOneDayRate(String path) {
         List<Rate> listRate = new ArrayList<>();
@@ -73,7 +87,7 @@ public class HandlerCommandConsole {
      * @return путь до файла
      */
     private String getPath(String commandWord) {
-        String path = null;
+        String path;
         switch (commandWord) {
             case "TRY":
                 path = ConstantsRate.PATH_TRY;
@@ -85,7 +99,7 @@ public class HandlerCommandConsole {
                 path = ConstantsRate.PATH_USD;
                 break;
             default:
-                System.out.println("Unexpected value: " + commandWord);
+                throw new IllegalStateException("Unexpected value: " + commandWord);
         }
         return path;
     }

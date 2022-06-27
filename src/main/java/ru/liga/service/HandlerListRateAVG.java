@@ -43,7 +43,11 @@ public class HandlerListRateAVG implements CalcRate, GetRate, ShowRate {
             } else {
                 temp = rows[i].split(";");
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ConstantsRate.IN_PATTERN_DT);
-                Rate rate = new Rate(LocalDate.parse(temp[indexDate], formatter), Double.parseDouble(temp[indexRate].replace(',', '.').replace('\"', ' ').trim()));
+                Rate rate = new Rate(LocalDate.parse(temp[indexDate], formatter),
+                        Double.parseDouble(temp[indexRate]
+                                .replace(',', '.')
+                                .replace('\"', ' ')
+                                .trim()));
                 listRate.add(rate);
             }
 
