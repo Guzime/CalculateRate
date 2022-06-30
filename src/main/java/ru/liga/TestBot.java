@@ -9,7 +9,11 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
+import java.net.URI;
+import java.util.logging.Logger;
+
 public class TestBot extends TelegramLongPollingBot {
+    final static Logger logger = Logger.getLogger(String.valueOf(TestBot.class));
 
     public TestBot(DefaultBotOptions options) {
         super(options);
@@ -17,6 +21,8 @@ public class TestBot extends TelegramLongPollingBot {
 
     @SneakyThrows
     public static void main(String[] args) {
+        URI url = ClassLoader.getSystemResource("log.out").toURI();
+        logger.info("Запустился бот");
         TestBot bot = new TestBot(new DefaultBotOptions());
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
         telegramBotsApi.registerBot(bot);
@@ -38,6 +44,7 @@ public class TestBot extends TelegramLongPollingBot {
         if (update.hasMessage()) {
             Message message = update.getMessage();
             if (message.hasText()) {
+                logger.info("Отправили сообщение - " + message.getText());
                 execute(
                         SendMessage.builder()
                                 .chatId("231852649")
