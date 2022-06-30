@@ -9,7 +9,6 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
-import java.net.URI;
 import java.util.logging.Logger;
 
 public class TestBot extends TelegramLongPollingBot {
@@ -21,7 +20,7 @@ public class TestBot extends TelegramLongPollingBot {
 
     @SneakyThrows
     public static void main(String[] args) {
-        URI url = ClassLoader.getSystemResource("log.out").toURI();
+        logger.info("Запустился бот");
         logger.info("Запустился бот");
         TestBot bot = new TestBot(new DefaultBotOptions());
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
