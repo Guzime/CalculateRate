@@ -1,8 +1,8 @@
 package ru.liga.service;
 
+import ru.liga.model.Currency;
 import ru.liga.model.Rate;
 import ru.liga.repository.RateParser;
-import ru.liga.util.ConstantsRate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class HandlerCommandConsole {
     private final CalcRate calcRate;
     private final RateParser rateParser = new RateParser();
-    private final DisplayConsole displayConsole = new DisplayConsole();
+    private final ShowRate showRate = new ShowRate();
 
     public HandlerCommandConsole(CalcRate calcRate) {
         this.calcRate = calcRate;
@@ -41,6 +41,7 @@ public class HandlerCommandConsole {
      * @throws IllegalStateException кидаю
      */
     private String parseCommand(Scanner scanner) {
+        Currency currency;
         String strInputs;
         strInputs = scanner.nextLine();
         String[] commandWords = strInputs.split(" ");
@@ -49,7 +50,8 @@ public class HandlerCommandConsole {
             if (!commandWords[0].equals("rate")) {
                 throw new IllegalStateException("Unexpected value: " + commandWords[0]);
             }
-            path = getPath(commandWords[1]);
+            currency = getCurrency(commandWords[1]);
+            path = currency.getPath();
             if (path != null) {
                 switch (commandWords[2]) {
                     case "tomorrow":
@@ -75,7 +77,7 @@ public class HandlerCommandConsole {
      * @param path путь до файла
      */
     private void callWeekRate(String path) {
-        displayConsole.printRatesToConsole(calcRate.weekRate(rateParser.parseRateFromFile(path)));
+        showRate.printRatesToConsole(calcRate.weekRate(rateParser.parseRateFromFile(path)));
     }
 
     /**
@@ -86,7 +88,7 @@ public class HandlerCommandConsole {
     private void callOneDayRate(String path) {
         List<Rate> listRate = new ArrayList<>();
         listRate.add(calcRate.oneDayRate(rateParser.parseRateFromFile(path)));
-        displayConsole.printRatesToConsole(listRate);
+        showRate.printRatesToConsole(listRate);
     }
 
     /**
@@ -95,21 +97,21 @@ public class HandlerCommandConsole {
      * @param commandWord входная строка
      * @return путь до файла
      */
-    private String getPath(String commandWord) {
-        String path;
+    private Currency getCurrency(String commandWord) {
+        Currency currency;
         switch (commandWord) {
             case "TRY":
-                path = ConstantsRate.PATH_TRY;
+                currency = Currency.TRY;
                 break;
             case "EUR":
-                path = ConstantsRate.PATH_EUR;
+                currency = Currency.EUR;
                 break;
             case "USD":
-                path = ConstantsRate.PATH_USD;
+                currency = Currency.USD;
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + commandWord);
         }
-        return path;
+        return currency;
     }
 }

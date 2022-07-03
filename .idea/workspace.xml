@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f76478e5-905d-4cc1-8944-051f63f34c6b" name="Changes" comment="interface fixed">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/model/Currency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/util/GraphUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/liga/repository/RateParserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerCommandTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/TestBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/TestBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/repository/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/repository/FileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/repository/RateParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/repository/RateParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/DisplayConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/ShowRate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/util/ConstantsRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/util/ConstantsRate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +29,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
+        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
@@ -36,15 +49,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "last_opened_file_path": "C:/Users/Толмач/YandexDisk/lessons/ExamFinal",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "File.Encoding"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Толмач\Documents\GitHub\CalculationRate\src\main\resources" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ru.liga.service" />
+      <recent name="ru.liga.repository" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.TestBot">
+  <component name="RunManager" selected="JUnit.HandlerCommandTest.testParseCommandWeek">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.liga.App" />
       <module name="CalculationRate" />
@@ -58,29 +86,84 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestBot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="18" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="ru.liga.TestBot" />
-      <module name="calculation-rate" />
+    <configuration name="HandlerCommandTest.testParseCommand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CalculationRate" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.liga.*" />
+          <option name="PATTERN" value="ru.liga.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="ru.liga.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerCommandTest" />
+      <option name="METHOD_NAME" value="testParseCommand" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandlerCommandTest.testParseCommandWeek" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CalculationRate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.liga.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.liga.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerCommandTest" />
+      <option name="METHOD_NAME" value="testParseCommandWeek" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RateParserTest.testGetLastDateFromFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CalculationRate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.liga.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.liga.repository" />
+      <option name="MAIN_CLASS_NAME" value="ru.liga.repository.RateParserTest" />
+      <option name="METHOD_NAME" value="testGetLastDateFromFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RateParserTest.testParseRateFromFileToDay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CalculationRate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.liga.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.liga.repository" />
+      <option name="MAIN_CLASS_NAME" value="ru.liga.repository.RateParserTest" />
+      <option name="METHOD_NAME" value="testParseRateFromFileToDay" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.App" />
-      <item itemvalue="Application.TestBot" />
+      <item itemvalue="JUnit.HandlerCommandTest.testParseCommand" />
+      <item itemvalue="JUnit.HandlerCommandTest.testParseCommandWeek" />
+      <item itemvalue="JUnit.RateParserTest.testGetLastDateFromFile" />
+      <item itemvalue="JUnit.RateParserTest.testParseRateFromFileToDay" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestBot" />
+        <item itemvalue="JUnit.HandlerCommandTest.testParseCommandWeek" />
+        <item itemvalue="JUnit.HandlerCommandTest.testParseCommand" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.RateParserTest.testParseRateFromFileToDay" />
+        <item itemvalue="JUnit.RateParserTest.testGetLastDateFromFile" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +231,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Done" />
