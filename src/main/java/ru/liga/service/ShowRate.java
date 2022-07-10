@@ -23,4 +23,18 @@ public class ShowRate {
             System.out.println(rate);
         }
     }
+
+    public String convertListRatesToString(List<List<Rate>> listRate) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < listRate.size(); i++) {
+            if (i == listRate.size() - 1) {
+                stringBuilder.append(convertRatesToString(listRate.get(i)));
+            } else {
+                stringBuilder.append(convertRatesToString(listRate.get(i))).append('\n');
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+
 }

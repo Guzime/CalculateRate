@@ -1,5 +1,6 @@
 package ru.liga.service;
 
+import ru.liga.model.Command;
 import ru.liga.model.Rate;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
  */
 public interface CalcRate {
 
-    Rate oneDayRate(List<Rate> listRate);
+    List<Rate> toDateRate(List<Rate> listRate, Command command);
 
-    List<Rate> weekRate(List<Rate> listRate);
+    List<Rate> periodRate(List<Rate> listRate, Command command);
 }

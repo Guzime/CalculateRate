@@ -2,6 +2,7 @@ package ru.liga.repository;
 
 import junit.framework.TestCase;
 import org.junit.Test;
+import ru.liga.model.Algorithm;
 import ru.liga.model.Currency;
 import ru.liga.model.Rate;
 
@@ -28,7 +29,7 @@ public class RateParserTest extends TestCase {
                 new Rate(LocalDate.of(2022, 6, 9), new BigDecimal("63.9380")),
                 new Rate(LocalDate.of(2022, 6, 8), new BigDecimal("64.5699"))
         );
-        List<Rate> listRate2 = rateParser.parseRateFromFile(Currency.EUR.getPath());
+        List<Rate> listRate2 = rateParser.parseRateFromFile(Currency.EUR.getPath(), Algorithm.AVG.getCountReadRates());
         assertThat(listRate2.toString()).isEqualTo(listRate.toString());
 
     }

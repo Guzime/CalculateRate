@@ -1,14 +1,31 @@
 package ru.liga.service;
 
+import com.google.common.collect.Lists;
+import ru.liga.model.Command;
 import ru.liga.model.Rate;
 import ru.liga.util.ConstantsRate;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HandlerListRateAVG implements CalcRate {
+    public List<Rate> toDateRate(List<Rate> listRate, Command command) {
+        List<Rate> tempRate = new ArrayList<>();
+        List<Rate> resultList = new ArrayList<>();
+        LocalDate startDate = command.getStartDate();
+        LocalDate toDate = command.getToDate();
+        while (!startDate.equals(toDate)) {
+            tempRate = plusOneRate(listRate, oneDayRate(listRate));
+            listRate = tempRate;
+            startDate = startDate.plusDays(1);
+        }
+        resultList.add(tempRate.get(0));
+        return resultList;
+    }
+
     /**
      * Курс на один следующий день
      *
@@ -18,10 +35,11 @@ public class HandlerListRateAVG implements CalcRate {
     public Rate oneDayRate(List<Rate> listRate) {
         BigDecimal numRate = BigDecimal.ZERO;
 
-        for (int i = 0; i < ConstantsRate.DAYS_OF_RATE; i++) {
+        for (int i = 0; i < ConstantsRate.DAYS_OF_RATE_AVG; i++) {
             numRate = numRate.add(listRate.get(i).getRate());
         }
-        return new Rate(listRate.get(0).getDate().plusDays(1), numRate.divide(BigDecimal.valueOf(ConstantsRate.DAYS_OF_RATE), 4, RoundingMode.HALF_UP));
+        return new Rate(listRate.get(0).getDate().plusDays(1),
+                numRate.divide(BigDecimal.valueOf(ConstantsRate.DAYS_OF_RATE_AVG), 4, RoundingMode.HALF_UP));
     }
 
     /**
@@ -30,13 +48,19 @@ public class HandlerListRateAVG implements CalcRate {
      * @param listRate Список курсов за неделю
      * @return Список курсов на следующую неделю
      */
-    public List<Rate> weekRate(List<Rate> listRate) {
+    public List<Rate> periodRate(List<Rate> listRate, Command command) {
         List<Rate> resultRate = new ArrayList<>();
-        for (int i = 0; i < ConstantsRate.DAYS_OF_RATE; i++) {
-            resultRate = plusOneRate(listRate, oneDayRate(listRate));
-            listRate = resultRate;
+        List<Rate> tempRate;
+        LocalDate startDate = command.getStartDate();
+        LocalDate toDate = command.getToDate();
+
+        while (startDate.toEpochDay() < toDate.toEpochDay()) {
+            tempRate = plusOneRate(listRate, oneDayRate(listRate));
+            resultRate.add(oneDayRate(listRate));
+            listRate = tempRate;
+            startDate = startDate.plusDays(1);
         }
-        return resultRate;
+        return Lists.reverse(resultRate);
     }
 
     /**
@@ -49,7 +73,7 @@ public class HandlerListRateAVG implements CalcRate {
     private List<Rate> plusOneRate(List<Rate> listRate, Rate rate) {
         List<Rate> resultRate = new ArrayList<>();
         resultRate.add(rate);
-        for (int i = 0; i < ConstantsRate.DAYS_OF_RATE - 1; i++) {
+        for (int i = 0; i < listRate.size() - 1; i++) {
             resultRate.add(listRate.get(i));
         }
         return resultRate;

@@ -16,14 +16,14 @@ public class RateParser {
      * @param path Путь до файла
      * @return Список курсов
      */
-    public List<Rate> parseRateFromFile(String path) {
+    public List<Rate> parseRateFromFile(String path, int countDate) {
         FileReader fileReader = new FileReader();
         List<Rate> listRate = new ArrayList<>();
-        String[] rows = fileReader.readFile(path);
+        String[] rows = fileReader.readFile(path, countDate);
         String[] temp;
         int indexRate = 0;
         int indexDate = 0;
-        for (int i = 0; i < ConstantsRate.DAYS_OF_RATE + 1; i++) {
+        for (int i = 0; i < countDate + 1; i++) {
             if (i == 0) {
                 temp = rows[i].split(";");
                 for (int j = 0; j < temp.length; j++) {

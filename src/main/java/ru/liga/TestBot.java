@@ -12,6 +12,8 @@ import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
+import ru.liga.model.Algorithm;
+import ru.liga.model.Command;
 import ru.liga.model.Currency;
 import ru.liga.model.Rate;
 import ru.liga.repository.RateParser;
@@ -58,13 +60,14 @@ public class TestBot extends TelegramLongPollingBot {
         ShowRate showRate = new ShowRate();
 
 
-        List<Rate> listRate = calcRate.weekRate(rateParser.parseRateFromFile(Currency.USD.getPath()));
-        //listRate.add(calcRate.oneDayRate(rateParser.parseRateFromFile(ConstantsRate.PATH_USD)));
-        graphUtils.setData(listRate);
-        InputFile inputFile = new InputFile(graphUtils.getCurrencyRatesAsGraph());
+
 
         if (update.hasMessage()) {
             Message message = update.getMessage();
+            List<Rate> listRate = calcRate.periodRate(rateParser.parseRateFromFile(Currency.USD.getPath(), Algorithm.AVG.getCountReadRates()), new Command(message.getText().split("-")));
+            //listRate.add(calcRate.oneDayRate(rateParser.parseRateFromFile(ConstantsRate.PATH_USD)));
+            graphUtils.setData(listRate);
+            InputFile inputFile = new InputFile(graphUtils.getCurrencyRatesAsGraph());
             if (message.hasText()) {
                 logger.info("Отправили сообщение - " + message.getText());
                 execute(

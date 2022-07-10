@@ -1,8 +1,10 @@
 package ru.liga.service;
 
+import ru.liga.model.Command;
 import ru.liga.model.Currency;
 import ru.liga.model.Rate;
 import ru.liga.repository.RateParser;
+import ru.liga.util.ConstantsRate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +79,7 @@ public class HandlerCommandConsole {
      * @param path путь до файла
      */
     private void callWeekRate(String path) {
-        showRate.printRatesToConsole(calcRate.weekRate(rateParser.parseRateFromFile(path)));
+        showRate.printRatesToConsole(calcRate.periodRate(rateParser.parseRateFromFile(path, ConstantsRate.DAYS_OF_RATE_AVG), new Command(" ".split(" "))));
     }
 
     /**
@@ -87,7 +89,7 @@ public class HandlerCommandConsole {
      */
     private void callOneDayRate(String path) {
         List<Rate> listRate = new ArrayList<>();
-        listRate.add(calcRate.oneDayRate(rateParser.parseRateFromFile(path)));
+        //listRate.add(calcRate.oneDayRate(rateParser.parseRateFromFile(path)));
         showRate.printRatesToConsole(listRate);
     }
 
