@@ -54,7 +54,10 @@ public class ValidateCommands {
         if (!temp[0].equals(WordCommand.ALG.name().toLowerCase())) {
             throw new IllegalStateException("Unexpected value: " + temp[0]);
         } else {
-            if (!temp[1].equals(Algorithm.MIST.name().toLowerCase()) && !temp[1].equals(Algorithm.AVG.name().toLowerCase()) && !temp[1].equals(Algorithm.LASTYEAR.name().toLowerCase())) {
+            if (!temp[1].equals(Algorithm.MIST.name().toLowerCase())
+                    && !temp[1].equals(Algorithm.AVG.name().toLowerCase())
+                    && !temp[1].equals(Algorithm.LINREG.name().toLowerCase())
+                    && !temp[1].equals(Algorithm.LASTYEAR.name().toLowerCase())) {
                 throw new IllegalStateException("Unexpected value: " + temp[1]);
             }
         }

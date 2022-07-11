@@ -17,7 +17,7 @@ import ru.liga.model.Command;
 import ru.liga.model.Currency;
 import ru.liga.model.Rate;
 import ru.liga.repository.RateParser;
-import ru.liga.service.CalcRate;
+import ru.liga.service.HandlerListRate;
 import ru.liga.service.HandlerListRateAVG;
 import ru.liga.service.ShowRate;
 import ru.liga.util.GraphUtils;
@@ -55,7 +55,7 @@ public class TestBot extends TelegramLongPollingBot {
     @SneakyThrows
     public void onUpdateReceived(Update update) {
         GraphUtils graphUtils = new GraphUtils();
-        CalcRate calcRate = new HandlerListRateAVG();
+        HandlerListRate HandlerListRate = new HandlerListRateAVG();
         RateParser rateParser = new RateParser();
         ShowRate showRate = new ShowRate();
 
@@ -64,7 +64,7 @@ public class TestBot extends TelegramLongPollingBot {
 
         if (update.hasMessage()) {
             Message message = update.getMessage();
-            List<Rate> listRate = calcRate.periodRate(rateParser.parseRateFromFile(Currency.USD.getPath(), Algorithm.AVG.getCountReadRates()), new Command(message.getText().split("-")));
+            List<Rate> listRate = HandlerListRate.periodRate(rateParser.parseRateFromFile(Currency.USD.getPath(), Algorithm.AVG.getCountReadRates()), new Command(message.getText().split("-")));
             //listRate.add(calcRate.oneDayRate(rateParser.parseRateFromFile(ConstantsRate.PATH_USD)));
             graphUtils.setData(listRate);
             InputFile inputFile = new InputFile(graphUtils.getCurrencyRatesAsGraph());

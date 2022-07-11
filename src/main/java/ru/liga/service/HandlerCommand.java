@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HandlerCommand {
-    private final CalcRate calcRate;
+    private final HandlerListRate handlerListRate;
     private final RateParser rateParser;
     private final Command command;
 
-    public HandlerCommand(CalcRate calcRate, RateParser rateParser, Command command) {
-        this.calcRate = calcRate;
+    public HandlerCommand(HandlerListRate handlerListRate, RateParser rateParser, Command command) {
+        this.handlerListRate = handlerListRate;
         this.rateParser = rateParser;
         this.command = command;
     }
@@ -24,9 +24,9 @@ public class HandlerCommand {
         List<List<Rate>> resultRate = new ArrayList<>();
         for (Currency currency : command.getCurrencyList()) {
             if (!command.getDateFormat().equals(WordCommand.DATE)) {
-                resultRate.add(calcRate.periodRate(rateParser.parseRateFromFile(currency.getPath(), command.getAlgorithm().getCountReadRates()), command));
+                resultRate.add(handlerListRate.periodRate(rateParser.parseRateFromFile(currency.getPath(), command.getAlgorithm().getCountReadRates()), command));
             } else {
-                resultRate.add(calcRate.toDateRate(rateParser.parseRateFromFile(currency.getPath(), command.getAlgorithm().getCountReadRates()), command));
+                resultRate.add(handlerListRate.toDateRate(rateParser.parseRateFromFile(currency.getPath(), command.getAlgorithm().getCountReadRates()), command));
             }
         }
         return resultRate;
