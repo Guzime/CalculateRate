@@ -1,20 +1,30 @@
 package ru.liga.service;
 
 import com.google.common.collect.Lists;
+import ru.liga.model.Algorithm;
 import ru.liga.model.Command;
 import ru.liga.model.Rate;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
-public class HandlerListRateLastYear implements CalcRate {
+public class HandlerListRateMist implements CalcRate {
     @Override
     public List<Rate> toDateRate(List<Rate> listRate, Command command) {
-        List<Rate> resultRate = new ArrayList<>();
-        resultRate.add(oneDayRate(listRate, command.getToDate()));
-        return resultRate;
+
+        List<Rate> tempRate = new ArrayList<>();
+        List<Rate> resultList = new ArrayList<>();
+        LocalDate startDate = command.getStartDate();
+        LocalDate toDate = command.getToDate();
+        while (!startDate.equals(toDate)) {
+            tempRate = plusOneRate(listRate, oneDayRate(listRate, command.getToDate()));
+            listRate = tempRate;
+            startDate = startDate.plusDays(1);
+        }
+        resultList.add(tempRate.get(0));
+        return resultList;
     }
 
     @Override
@@ -34,19 +44,8 @@ public class HandlerListRateLastYear implements CalcRate {
     }
 
     public Rate oneDayRate(List<Rate> listRate, LocalDate toDate) {
-        Rate result = new Rate(LocalDate.now(), BigDecimal.valueOf(0));
-        LocalDate localDate = toDate.minusYears(1);
-
-        for (Rate rate : listRate) {
-            if (rate.getDate().equals(localDate)) {
-                result = new Rate(toDate, rate.getRate());
-                return result;
-            }
-            if (rate.getDate().toEpochDay() - localDate.toEpochDay() < 0) {
-                result = new Rate(toDate, rate.getRate());
-                return result;
-            }
-        }
+        Random ran = new Random();
+        Rate result = new Rate(toDate, listRate.get(ran.nextInt(Algorithm.MIST.getCountReadRates())).getRate());
         return result;
     }
 
@@ -58,4 +57,5 @@ public class HandlerListRateLastYear implements CalcRate {
         }
         return resultRate;
     }
+
 }

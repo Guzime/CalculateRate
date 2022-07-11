@@ -4,30 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f76478e5-905d-4cc1-8944-051f63f34c6b" name="Changes" comment="interface fixed">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/model/Algorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/model/WordCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateLastYear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/ParserCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/ValidateCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/liga/model/CommandTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLastYearTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/liga/service/ValidateCommandsTest.java" afterDir="false" />
+    <list default="true" id="f76478e5-905d-4cc1-8944-051f63f34c6b" name="Changes" comment="commands patch">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateMist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateMistTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/TestBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/TestBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/model/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/model/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/model/CommandsAll.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/model/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/model/Currency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/repository/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/repository/FileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/repository/RateParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/repository/RateParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/CalcRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/CalcRate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/ShowRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/ShowRate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/util/ConstantsRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/util/ConstantsRate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/liga/repository/RateParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/liga/repository/RateParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateLastYear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateLastYear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLastYearTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLastYearTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
         <option value="JUnit3 Test Class" />
       </list>
     </option>
@@ -81,40 +64,7 @@
       <recent name="ru.liga.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HandlerListRateLastYearTest">
-    <configuration name="CommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CalculationRate" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.liga.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.liga.model" />
-      <option name="MAIN_CLASS_NAME" value="ru.liga.model.CommandTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HandlerCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CalculationRate" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.liga.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Java/jdk-11.0.2" />
-      <option name="PACKAGE_NAME" value="ru.liga.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerCommandTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.HandlerListRateMistTest">
     <configuration name="HandlerListRateLastYearTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CalculationRate" />
       <extension name="coverage">
@@ -151,7 +101,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HandlerListRateLastYearTest.testToDateRateLate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HandlerListRateMistTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CalculationRate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.liga.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.liga.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerListRateMistTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandlerListRateMistTest.testPeriodRateWeek" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CalculationRate" />
       <extension name="coverage">
         <pattern>
@@ -162,8 +127,44 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Java/jdk-11.0.2" />
       <option name="PACKAGE_NAME" value="ru.liga.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerListRateLastYearTest" />
-      <option name="METHOD_NAME" value="testToDateRateLate" />
+      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerListRateMistTest" />
+      <option name="METHOD_NAME" value="testPeriodRateWeek" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandlerListRateMistTest.testToDateRate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CalculationRate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.liga.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Java/jdk-11.0.2" />
+      <option name="PACKAGE_NAME" value="ru.liga.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerListRateMistTest" />
+      <option name="METHOD_NAME" value="testToDateRate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandlerListRateMistTest.testToDateRateTomorrow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CalculationRate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.liga.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Java/jdk-11.0.2" />
+      <option name="PACKAGE_NAME" value="ru.liga.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerListRateMistTest" />
+      <option name="METHOD_NAME" value="testToDateRateTomorrow" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -171,17 +172,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.HandlerListRateLastYearTest.testToDateRate" />
+      <item itemvalue="JUnit.HandlerListRateMistTest" />
+      <item itemvalue="JUnit.HandlerListRateMistTest.testToDateRateTomorrow" />
+      <item itemvalue="JUnit.HandlerListRateMistTest.testPeriodRateWeek" />
+      <item itemvalue="JUnit.HandlerListRateMistTest.testToDateRate" />
       <item itemvalue="JUnit.HandlerListRateLastYearTest" />
-      <item itemvalue="JUnit.HandlerListRateLastYearTest.testToDateRateLate" />
-      <item itemvalue="JUnit.CommandTest" />
-      <item itemvalue="JUnit.HandlerCommandTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HandlerListRateMistTest" />
+        <item itemvalue="JUnit.HandlerListRateMistTest.testToDateRateTomorrow" />
+        <item itemvalue="JUnit.HandlerListRateMistTest.testPeriodRateWeek" />
+        <item itemvalue="JUnit.HandlerListRateMistTest.testToDateRate" />
         <item itemvalue="JUnit.HandlerListRateLastYearTest" />
-        <item itemvalue="JUnit.HandlerListRateLastYearTest.testToDateRateLate" />
-        <item itemvalue="JUnit.HandlerCommandTest" />
-        <item itemvalue="JUnit.CommandTest" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656354350432</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commands patch">
+      <created>1657492928247</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657492928248</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -256,7 +266,8 @@
     <MESSAGE value="Worked version (with refactor)" />
     <MESSAGE value="add JavaDoc" />
     <MESSAGE value="add @throws to javadoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="add @throws to javadoc" />
+    <MESSAGE value="commands patch" />
+    <option name="LAST_COMMIT_MESSAGE" value="commands patch" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -266,53 +277,93 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java</url>
-          <line>53</line>
+          <line>54</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java</url>
-          <line>54</line>
+          <line>55</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java</url>
-          <line>56</line>
+          <line>57</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java</url>
-          <line>57</line>
+          <line>58</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java</url>
-          <line>59</line>
+          <line>60</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java</url>
-          <line>60</line>
+          <line>61</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java</url>
-          <line>58</line>
+          <line>59</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java</url>
-          <line>62</line>
+          <line>63</line>
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java</url>
-          <line>52</line>
+          <line>53</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java</url>
-          <line>51</line>
+          <line>52</line>
           <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLastYearTest.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLastYearTest.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLastYearTest.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLastYearTest.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLastYearTest.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLastYearTest.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLastYearTest.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLastYearTest.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="100" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

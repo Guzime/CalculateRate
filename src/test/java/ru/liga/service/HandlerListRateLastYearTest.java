@@ -41,6 +41,19 @@ public class HandlerListRateLastYearTest extends TestCase {
     }
 
     @Test
-    public void testPeriodRate() {
+    public void testToDateRateWeek() {
+        List<Rate> listRate = rateParser.parseRateFromFile(Currency.USD.getPath(), Algorithm.LASTYEAR.getCountReadRates());
+        String commandInput = "rate USD -period week -alg lastyear";
+        ValidateCommands validateCommands = new ValidateCommands(commandInput);
+        validateCommands.validate();
+        List<Rate> resultRate = handlerListRateLastYear.periodRate(listRate, new Command(commandInput.split("-")));
+        showRate.printRatesToConsole(resultRate);
+        assertThat(showRate.convertRatesToString(resultRate)).isEqualTo("ПТ 24.06.2022 - 72,6671\n" +
+                "ЧТ 23.06.2022 - 73,1661\n" +
+                "СР 22.06.2022 - 73,1987\n" +
+                "ВТ 21.06.2022 - 72,2216\n" +
+                "ПН 20.06.2022 - 72,2216\n" +
+                "ВС 19.06.2022 - 72,2216\n" +
+                "СБ 18.06.2022 - 72,5048\n");
     }
 }

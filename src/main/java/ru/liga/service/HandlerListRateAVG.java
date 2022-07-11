@@ -1,9 +1,9 @@
 package ru.liga.service;
 
 import com.google.common.collect.Lists;
+import ru.liga.model.Algorithm;
 import ru.liga.model.Command;
 import ru.liga.model.Rate;
-import ru.liga.util.ConstantsRate;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -35,11 +35,11 @@ public class HandlerListRateAVG implements CalcRate {
     public Rate oneDayRate(List<Rate> listRate) {
         BigDecimal numRate = BigDecimal.ZERO;
 
-        for (int i = 0; i < ConstantsRate.DAYS_OF_RATE_AVG; i++) {
+        for (int i = 0; i < Algorithm.AVG.getCountReadRates(); i++) {
             numRate = numRate.add(listRate.get(i).getRate());
         }
         return new Rate(listRate.get(0).getDate().plusDays(1),
-                numRate.divide(BigDecimal.valueOf(ConstantsRate.DAYS_OF_RATE_AVG), 4, RoundingMode.HALF_UP));
+                numRate.divide(BigDecimal.valueOf(Algorithm.AVG.getCountReadRates()), 4, RoundingMode.HALF_UP));
     }
 
     /**
