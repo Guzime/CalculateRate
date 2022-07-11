@@ -1,4 +1,4 @@
-package ru.liga;
+package ru.liga.service;
 
 import lombok.SneakyThrows;
 import org.telegram.telegrambots.bots.DefaultBotOptions;
@@ -13,7 +13,6 @@ import ru.liga.model.Command;
 import ru.liga.model.Rate;
 import ru.liga.model.WordCommand;
 import ru.liga.repository.RateParser;
-import ru.liga.service.*;
 import ru.liga.util.ConstantsBot;
 import ru.liga.util.GraphUtils;
 
@@ -23,8 +22,8 @@ import static ru.liga.App.logger;
 
 
 public class HandlerTelegramBot extends TelegramLongPollingBot {
-    GraphUtils graphUtils = new GraphUtils();
-    ShowRate showRate = new ShowRate();
+    private final GraphUtils graphUtils = new GraphUtils();
+    private final ShowRate showRate = new ShowRate();
 
     public HandlerTelegramBot(DefaultBotOptions options) {
         super(options);

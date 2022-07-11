@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class HandlerCommandTest extends TestCase {
 
-    private static ShowRate showRate = new ShowRate();
+    private static final ShowRate showRate = new ShowRate();
 
 
     @Test

@@ -37,17 +37,15 @@ public class ValidateCommands {
         temp = commands[2].split(" ");
         validteAlgorithmParams(temp);
 
-        validateOutputParams(temp);
+        validateOutputParams();
     }
 
     /**
      * Валидация аутпут аргумента
-     *
-     * @param temp Разбитая команда на массив
      */
-    private void validateOutputParams(String[] temp) {
+    private void validateOutputParams() {
         if (commands.length > 3) {
-            temp = commands[3].split(" ");
+            String[] temp = commands[3].split(" ");
             if (!temp[0].equals(WordCommand.OUTPUT.name().toLowerCase())) {
                 throw new IllegalStateException("Unexpected value: " + temp[0]);
             } else {
@@ -115,7 +113,7 @@ public class ValidateCommands {
         }
         String[] tempListCurrency = temp[1].split(",");
         for (String strCurr : tempListCurrency) {
-            if (!Arrays.stream(Currency.values()).anyMatch(cur -> strCurr.equals(cur.name()))) {
+            if (Arrays.stream(Currency.values()).noneMatch(cur -> strCurr.equals(cur.name()))) {
                 throw new IllegalStateException("Unexpected value: " + strCurr);
             }
         }

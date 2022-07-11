@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RateParserTest extends TestCase {
 
-    RateParser rateParser = new RateParser();
+    private final RateParser rateParser = new RateParser();
 
     @Test
     public void testParseRateFromFile() {

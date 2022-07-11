@@ -13,9 +13,9 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class HandlerListRateLastYearTest extends TestCase {
-    private RateParser rateParser = new RateParser();
-    private HandlerListRate handlerListRateLastYear = new HandlerListRateLastYear();
-    private ShowRate showRate = new ShowRate();
+    private final RateParser rateParser = new RateParser();
+    private final HandlerListRate handlerListRateLastYear = new HandlerListRateLastYear();
+    private final ShowRate showRate = new ShowRate();
 
     @Test
     public void testToDateRate() {

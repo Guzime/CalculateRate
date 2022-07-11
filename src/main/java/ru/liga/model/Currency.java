@@ -6,7 +6,7 @@ public enum Currency {
     EUR("src/main/resources/csv/EUR_F01_02_2005_T05_03_2022.csv"),
     BGN("src/main/resources/csv/BGN_F01_02_2005_T05_03_2022.csv"),
     AMD("src/main/resources/csv/AMD_F01_02_2005_T05_03_2022.csv");
-    private String path;
+    private final String path;
 
     Currency(String path) {
         this.path = path;

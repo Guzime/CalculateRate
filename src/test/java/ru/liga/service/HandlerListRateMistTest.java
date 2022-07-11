@@ -14,9 +14,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class HandlerListRateMistTest extends TestCase {
-    private RateParser rateParser = new RateParser();
-    private HandlerListRateMist handlerListRateMist = new HandlerListRateMist();
-    private ShowRate showRate = new ShowRate();
+    private final RateParser rateParser = new RateParser();
+    private final HandlerListRateMist handlerListRateMist = new HandlerListRateMist();
 
     @Test
     public void testToDateRateTomorrow() {
