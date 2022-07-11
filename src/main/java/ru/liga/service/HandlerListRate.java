@@ -10,6 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class HandlerListRate {
+    /**
+     * Курс на конкретную дату
+     *
+     * @param listRate Список курсов за неделю
+     * @param command  спарсенная комманда
+     * @return курс посчитанный для конкретной даты
+     */
     public List<Rate> toDateRate(List<Rate> listRate, Command command) {
         List<Rate> tempRate = new ArrayList<>();
         List<Rate> resultList = new ArrayList<>();
@@ -28,14 +35,14 @@ public abstract class HandlerListRate {
      * Курс на один следующий день
      *
      * @param listRate Список курсов за неделю
-     * @return Курс посчитанный по среднеарифметическому всех остальных курсов в классе
+     * @return Курс посчитанный по алгоритму
      */
     public Rate oneDayRate(List<Rate> listRate, LocalDate toDate) {
         return new Rate(toDate, BigDecimal.ZERO);
     }
 
     /**
-     * Курс на неделю по методу среднего арифметического
+     * Курс на период
      *
      * @param listRate Список курсов за неделю
      * @return Список курсов на следующую неделю

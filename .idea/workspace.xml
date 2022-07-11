@@ -4,24 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f76478e5-905d-4cc1-8944-051f63f34c6b" name="Changes" comment="little dev">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateLinearRegression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/util/LinearRegression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLinRegTest.java" afterDir="false" />
+    <list default="true" id="f76478e5-905d-4cc1-8944-051f63f34c6b" name="Changes" comment="refactoring">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerTelegramBot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/liga/util/ConstantsBot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/csv/AMD_F01_02_2005_T05_03_2022.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/csv/BGN_F01_02_2005_T05_03_2022.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/csv/EUR_F01_02_2005_T05_03_2022.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/csv/TRY_F01_02_2005_T05_03_2022.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/csv/USD_F01_02_2005_T05_03_2022.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/TestBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/TestBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/model/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/model/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/CalcRate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/TestBot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/model/Currency.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/repository/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/repository/FileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/repository/RateParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/repository/RateParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerCommandConsole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateAVG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateLastYear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateLastYear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateLinearRegression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateLinearRegression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateMist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/HandlerListRateMist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/ParserCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/ParserCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/ShowRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/ShowRate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/service/ValidateCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/service/ValidateCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/util/ConstantsRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/util/ConstantsRate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/liga/util/GraphUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/liga/util/GraphUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/RC_F01_06_2002_T17_06_2022_EUR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/oldCSV/RC_F01_06_2002_T17_06_2022_EUR.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/RC_F01_06_2002_T17_06_2022_TRY.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/oldCSV/RC_F01_06_2002_T17_06_2022_TRY.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/RC_F01_06_2002_T17_06_2022_USD.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/oldCSV/RC_F01_06_2002_T17_06_2022_USD.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/liga/repository/RateParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/liga/repository/RateParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerCommandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerCommandTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLastYearTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLastYearTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLinRegTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateLinRegTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateMistTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/liga/service/HandlerListRateMistTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +72,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\lessons\Git\homework1\src\main\resources\csv" />
+      <recent name="C:\lessons\Git\homework1\src\main\resources" />
+      <recent name="C:\lessons\Git\homework1\src\main\resources\oldCSV" />
       <recent name="C:\Users\Толмач\Documents\GitHub\CalculationRate\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -71,64 +87,16 @@
       <recent name="ru.liga.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HandlerListRateLinRegTest">
-    <configuration name="HandlerCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.liga.App" />
       <module name="calculation-rate" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.liga.service.*" />
+          <option name="PATTERN" value="ru.liga.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.liga.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerCommandTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HandlerListRateLastYearTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="calculation-rate" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.liga.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.liga.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerListRateLastYearTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HandlerListRateLinRegTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="calculation-rate" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.liga.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.liga.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerListRateLinRegTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HandlerListRateLinRegTest.testPeriodWeek" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="calculation-rate" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.liga.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.liga.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerListRateLinRegTest" />
-      <option name="METHOD_NAME" value="testPeriodWeek" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -166,21 +134,68 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HandlerListRateMistTest.testPeriodRateWeek" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="calculation-rate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.liga.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.liga.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerListRateMistTest" />
+      <option name="METHOD_NAME" value="testPeriodRateWeek" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandlerListRateMistTest.testToDateRateTomorrow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="calculation-rate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.liga.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.liga.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.liga.service.HandlerListRateMistTest" />
+      <option name="METHOD_NAME" value="testToDateRateTomorrow" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidateCommandsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="calculation-rate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.liga.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.liga.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.liga.service.ValidateCommandsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.App" />
       <item itemvalue="JUnit.HandlerListRateLinearRegressionTest.testOneDayRate" />
-      <item itemvalue="JUnit.HandlerListRateLinRegTest" />
-      <item itemvalue="JUnit.HandlerCommandTest" />
-      <item itemvalue="JUnit.HandlerListRateLinRegTest.testPeriodWeek" />
-      <item itemvalue="JUnit.HandlerListRateLastYearTest" />
+      <item itemvalue="JUnit.HandlerListRateMistTest.testToDateRateTomorrow" />
+      <item itemvalue="JUnit.HandlerListRateMistTest.testPeriodRateWeek" />
       <item itemvalue="JUnit.HandlerListRateMistTest" />
+      <item itemvalue="JUnit.ValidateCommandsTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HandlerListRateLinRegTest" />
-        <item itemvalue="JUnit.HandlerCommandTest" />
-        <item itemvalue="JUnit.HandlerListRateLastYearTest" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.ValidateCommandsTest" />
         <item itemvalue="JUnit.HandlerListRateMistTest" />
-        <item itemvalue="JUnit.HandlerListRateLinRegTest.testPeriodWeek" />
+        <item itemvalue="JUnit.HandlerListRateMistTest.testPeriodRateWeek" />
+        <item itemvalue="JUnit.HandlerListRateMistTest.testToDateRateTomorrow" />
       </list>
     </recent_temporary>
   </component>
@@ -235,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656354350432</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactoring">
+      <created>1657533015626</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657533015626</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -256,7 +278,8 @@
     <MESSAGE value="Worked version (with refactor)" />
     <MESSAGE value="add JavaDoc" />
     <MESSAGE value="add @throws to javadoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="add @throws to javadoc" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

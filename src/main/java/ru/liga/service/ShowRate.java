@@ -5,10 +5,12 @@ import ru.liga.model.Rate;
 import java.util.List;
 
 public class ShowRate {
+
     /**
-     * Вывод всех курсов в списке
+     * Курс ввиде строки
      *
-     * @param listRate Список курсов
+     * @param listRate Входной курс
+     * @return Весь курс одной строкой
      */
     public String convertRatesToString(List<Rate> listRate) {
         StringBuilder stringBuilder = new StringBuilder();
@@ -18,12 +20,23 @@ public class ShowRate {
         return stringBuilder.toString();
     }
 
+    /**
+     * Выввод курса в консоль
+     *
+     * @param listRate Входной курс
+     */
     public void printRatesToConsole(List<Rate> listRate) {
         for (Rate rate : listRate) {
             System.out.println(rate);
         }
     }
 
+    /**
+     * Все курсы ввиде строки
+     *
+     * @param listRate Входные курсы
+     * @return Все курсы одной строкой
+     */
     public String convertListRatesToString(List<List<Rate>> listRate) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < listRate.size(); i++) {

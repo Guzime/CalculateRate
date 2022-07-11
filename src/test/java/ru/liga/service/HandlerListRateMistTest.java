@@ -21,7 +21,7 @@ public class HandlerListRateMistTest extends TestCase {
     @Test
     public void testToDateRateTomorrow() {
         List<Rate> listRate = rateParser.parseRateFromFile(Currency.USD.getPath(), Algorithm.MIST.getCountReadRates());
-        String commandInput = "rate USD -date 27.06.2022 -alg mist";
+        String commandInput = "rate USD -date 06.03.2022 -alg mist";
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
         List<Rate> resultRate = handlerListRateMist.toDateRate(listRate, new Command(commandInput.split("-")));

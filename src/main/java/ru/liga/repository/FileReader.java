@@ -10,7 +10,7 @@ public class FileReader {
      * Считывание файла csv из директории resources
      *
      * @param path путь до файла
-     * @return массив считанных строк в количестве ConstantsRate.DAYS_OF_RATE + 1
+     * @return массив считанных строк
      * @throws RuntimeException кидаю
      */
     public String[] readFile(String path, int countDate) {
@@ -29,7 +29,14 @@ public class FileReader {
         return resultString;
     }
 
-    public List<String> readFileT(String path) {
+    /**
+     * Считывание ВСЕГО файла csv из директории resources
+     *
+     * @param path путь до файла
+     * @return массив считанных строк
+     * @throws RuntimeException кидаю
+     */
+    public List<String> readFileAll(String path) {
         List<String> resultString = new ArrayList<>();
         try {
             BufferedReader br = new BufferedReader(new java.io.FileReader(path));

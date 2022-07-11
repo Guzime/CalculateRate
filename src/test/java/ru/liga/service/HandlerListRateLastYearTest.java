@@ -48,12 +48,13 @@ public class HandlerListRateLastYearTest extends TestCase {
         validateCommands.validate();
         List<Rate> resultRate = handlerListRateLastYear.periodRate(listRate, new Command(commandInput.split("-")));
         showRate.printRatesToConsole(resultRate);
-        assertThat(showRate.convertRatesToString(resultRate)).isEqualTo("ПТ 24.06.2022 - 72,6671\n" +
-                "ЧТ 23.06.2022 - 73,1661\n" +
-                "СР 22.06.2022 - 73,1987\n" +
-                "ВТ 21.06.2022 - 72,2216\n" +
-                "ПН 20.06.2022 - 72,2216\n" +
-                "ВС 19.06.2022 - 72,2216\n" +
-                "СБ 18.06.2022 - 72,5048\n");
+        assertThat(showRate.convertRatesToString(resultRate)).isEqualTo(
+                "СБ 12.03.2022 - 73,4996\n" +
+                        "ПТ 11.03.2022 - 74,0393\n" +
+                        "ЧТ 10.03.2022 - 74,2640\n" +
+                        "СР 09.03.2022 - 74,4275\n" +
+                        "ВТ 08.03.2022 - 74,4275\n" +
+                        "ПН 07.03.2022 - 74,4275\n" +
+                        "ВС 06.03.2022 - 74,4275\n");
     }
 }

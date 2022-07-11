@@ -12,6 +12,12 @@ import java.util.List;
 
 public class ParserCommands {
 
+    /**
+     * Парсинг части комманды с валютой
+     *
+     * @param command Комманда
+     * @return Лист валют
+     */
     public List<Currency> parseCurrency(String[] command) {
         String[] strCurrency = command[0].split(" ")[1].split(",");
         List<Currency> currencyList = new ArrayList<>();
@@ -21,6 +27,12 @@ public class ParserCommands {
         return currencyList;
     }
 
+    /**
+     * Парсинг части комманды с аутпут параметрами
+     *
+     * @param command Комманда
+     * @return Аутпут параметр
+     */
     public WordCommand parseOutputParams(String[] command) {
         WordCommand output;
         if (command.length == 3) {
@@ -32,15 +44,34 @@ public class ParserCommands {
         return output;
     }
 
+    /**
+     * Парсинг части комманды с параметрами алгоритма
+     *
+     * @param command Комманда
+     * @return Алгоритм
+     */
     public Algorithm parseAlgorithmParams(String[] command) {
         return Algorithm.valueOf(command[2].split(" ")[1].toUpperCase());
     }
 
+    /**
+     * Парсинг периода
+     *
+     * @param command Комманда
+     * @return Период
+     */
     public WordCommand parseDateFormat(String[] command) {
         return WordCommand.valueOf(command[1].split(" ")[0].toUpperCase());
     }
 
-
+    /**
+     * Парсинг даты из команды
+     *
+     * @param command    Комманда
+     * @param dateFormat Формат даты
+     * @param startDate  Начало отсчета
+     * @return Конечная дата расчета
+     */
     public LocalDate parseDateParams(String[] command, WordCommand dateFormat, LocalDate startDate) {
         String[] temp = command[1].split(" ");
         LocalDate toDate = LocalDate.now();

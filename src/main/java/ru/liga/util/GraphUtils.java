@@ -7,6 +7,7 @@ import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
+import ru.liga.model.Currency;
 import ru.liga.model.Rate;
 
 import javax.imageio.ImageIO;
@@ -49,10 +50,13 @@ public class GraphUtils {
     /**
      * Returns a sample dataset.
      */
-    public void setData(List<Rate> currencyList) {
-        for (int i = 0; i < currencyList.size(); i++) {
-            Rate cur = currencyList.get(i);
-            dataset.addValue(cur.getRate(), "RUB", cur.getDate());
+    public void setData(List<List<Rate>> rateList, List<Currency> currencyList) {
+        for (int j = 0; j < currencyList.size(); j++) {
+            List<Rate> tempRate = rateList.get(j);
+            for (int i = 0; i < tempRate.size(); i++) {
+                Rate cur = tempRate.get(i);
+                dataset.addValue(cur.getRate(), currencyList.get(j), cur.getDate());
+            }
         }
     }
 

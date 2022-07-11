@@ -17,6 +17,9 @@ public class ValidateCommands {
         this.commands = commands.split("-");
     }
 
+    /**
+     * Валидация команды
+     */
     public void validate() {
         if (commands.length < 3 || commands.length > 4) {
             throw new IllegalStateException("Unexpected count command!");
@@ -37,6 +40,11 @@ public class ValidateCommands {
         validateOutputParams(temp);
     }
 
+    /**
+     * Валидация аутпут аргумента
+     *
+     * @param temp Разбитая команда на массив
+     */
     private void validateOutputParams(String[] temp) {
         if (commands.length > 3) {
             temp = commands[3].split(" ");
@@ -50,6 +58,11 @@ public class ValidateCommands {
         }
     }
 
+    /**
+     * Валидация аутпут аргумента
+     *
+     * @param temp Разбитая команда на массив
+     */
     private void validteAlgorithmParams(String[] temp) {
         if (!temp[0].equals(WordCommand.ALG.name().toLowerCase())) {
             throw new IllegalStateException("Unexpected value: " + temp[0]);
@@ -63,6 +76,11 @@ public class ValidateCommands {
         }
     }
 
+    /**
+     * Валидация аргумента даты
+     *
+     * @param temp Разбитая команда на массив
+     */
     private void validateDateParams(String[] temp) {
         if (!temp[0].equals(WordCommand.DATE.name().toLowerCase()) && !temp[0].equals(WordCommand.PERIOD.name().toLowerCase())) {
             throw new IllegalStateException("Unexpected value: " + temp[0]);
@@ -86,6 +104,11 @@ public class ValidateCommands {
         }
     }
 
+    /**
+     * Валидация аргумента валюты
+     *
+     * @param temp Разбитая команда на массив
+     */
     private void validateCurrencyParams(String[] temp) {
         if (!temp[0].equals(WordCommand.RATE.name().toLowerCase())) {
             throw new IllegalStateException("Unexpected value: " + temp[0]);
@@ -98,7 +121,11 @@ public class ValidateCommands {
         }
     }
 
-
+    /**
+     * Валидация количества аргументов в команде
+     *
+     * @param command Команда целиком
+     */
     private void validateCountParams(String command) {
         String[] temp = command.split(" ");
         if (temp.length != 2) {

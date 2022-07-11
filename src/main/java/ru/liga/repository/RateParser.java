@@ -13,7 +13,8 @@ public class RateParser {
     /**
      * Добавление элементов списка курсов из заданного файла
      *
-     * @param path Путь до файла
+     * @param path      Путь до файла
+     * @param countDate Количество дней
      * @return Список курсов
      */
     public List<Rate> parseRateFromFile(String path, int countDate) {
@@ -49,9 +50,15 @@ public class RateParser {
         return listRate;
     }
 
+    /**
+     * Получение последней даты из файла
+     *
+     * @param path Путь до файла
+     * @return Дата
+     */
     public LocalDate getLastDateFromFile(String path) {
         FileReader fileReader = new FileReader();
-        List<String> rows = fileReader.readFileT(path);
+        List<String> rows = fileReader.readFileAll(path);
         LocalDate lastDate = LocalDate.now();
         String[] temp;
         int indexDate = 0;
@@ -72,10 +79,17 @@ public class RateParser {
         return lastDate;
     }
 
+    /**
+     * Добавление элементов списка курсов из заданного файла
+     *
+     * @param path   путь до файла
+     * @param toDate до какой даты нужно спарсить
+     * @return Список курсов
+     */
     public List<Rate> parseRateFromFile(String path, LocalDate toDate) {
         FileReader fileReader = new FileReader();
         List<Rate> listRate = new ArrayList<>();
-        List<String> rows = fileReader.readFileT(path);
+        List<String> rows = fileReader.readFileAll(path);
         String[] temp;
         int indexRate = 0;
         int indexDate = 0;

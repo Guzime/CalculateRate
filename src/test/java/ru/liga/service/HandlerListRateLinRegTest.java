@@ -24,7 +24,7 @@ public class HandlerListRateLinRegTest extends TestCase {
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
         List<Rate> resultRate = handlerListRateLinearRegression.toDateRate(listRate, new Command(commandInput.split("-")));
-        assertThat(showRate.convertRatesToString(resultRate)).isEqualTo("СБ 18.06.2022 - 73,9801\n");
+        assertThat(showRate.convertRatesToString(resultRate)).isEqualTo("СБ 18.06.2022 - 73,8883\n");
     }
 
     @Test
@@ -34,7 +34,7 @@ public class HandlerListRateLinRegTest extends TestCase {
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
         List<Rate> resultRate = handlerListRateLinearRegression.toDateRate(listRate, new Command(commandInput.split("-")));
-        assertThat(showRate.convertRatesToString(resultRate)).isEqualTo("ПН 18.07.2022 - 74,2607\n");
+        assertThat(showRate.convertRatesToString(resultRate)).isEqualTo("ПН 18.07.2022 - 73,9994\n");
     }
 
     @Test
@@ -44,15 +44,14 @@ public class HandlerListRateLinRegTest extends TestCase {
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
         List<Rate> resultRate = handlerListRateLinearRegression.periodRate(listRate, new Command(commandInput.split("-")));
-        showRate.printRatesToConsole(resultRate);
         assertThat(showRate.convertRatesToString(resultRate)).isEqualTo(
-                "ПТ 24.06.2022 - 74,0439\n" +
-                        "ЧТ 23.06.2022 - 74,0372\n" +
-                        "СР 22.06.2022 - 74,0365\n" +
-                        "ВТ 21.06.2022 - 74,0346\n" +
-                        "ПН 20.06.2022 - 74,0262\n" +
-                        "ВС 19.06.2022 - 74,0048\n" +
-                        "СБ 18.06.2022 - 73,9801\n");
+                "СБ 12.03.2022 - 74,8793\n" +
+                        "ПТ 11.03.2022 - 74,8806\n" +
+                        "ЧТ 10.03.2022 - 74,8835\n" +
+                        "СР 09.03.2022 - 74,8838\n" +
+                        "ВТ 08.03.2022 - 74,8866\n" +
+                        "ПН 07.03.2022 - 74,8849\n" +
+                        "ВС 06.03.2022 - 74,8849\n");
     }
 
 }

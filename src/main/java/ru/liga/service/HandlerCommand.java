@@ -20,6 +20,11 @@ public class HandlerCommand {
         this.command = command;
     }
 
+    /**
+     * Непосредственный вызов комманды
+     *
+     * @return Список всех курсов указанных валют в команде
+     */
     public List<List<Rate>> call() {
         List<List<Rate>> resultRate = new ArrayList<>();
         for (Currency currency : command.getCurrencyList()) {

@@ -8,6 +8,12 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class HandlerListRateLinearRegression extends HandlerListRate {
+    /**
+     * Курс на один следующий день по линейной регресии
+     *
+     * @param listRate Список курсов за неделю
+     * @return Курс посчитанный по алгоритму
+     */
     @Override
     public Rate oneDayRate(List<Rate> listRate, LocalDate toDate) {
         double[] x = new double[listRate.size()];
@@ -24,7 +30,6 @@ public class HandlerListRateLinearRegression extends HandlerListRate {
         LinearRegression linearRegression = new LinearRegression(x, y);
 
         BigDecimal resRate = BigDecimal.valueOf(linearRegression.predict(31));
-        Rate resultRate = new Rate(toDate, resRate);
-        return resultRate;
+        return new Rate(toDate, resRate);
     }
 }

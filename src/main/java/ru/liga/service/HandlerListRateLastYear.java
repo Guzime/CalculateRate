@@ -9,6 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HandlerListRateLastYear extends HandlerListRate {
+
+    /**
+     * Курс на конкретную дату по алгоритму прошлого года
+     *
+     * @param listRate Список курсов за неделю
+     * @param command  спарсеная комманда
+     * @return курс посчитанный для конкретной даты
+     */
     @Override
     public List<Rate> toDateRate(List<Rate> listRate, Command command) {
         List<Rate> resultRate = new ArrayList<>();
@@ -16,6 +24,12 @@ public class HandlerListRateLastYear extends HandlerListRate {
         return resultRate;
     }
 
+    /**
+     * Курс на один следующий день по алгоритму прошлого года
+     *
+     * @param listRate Список курсов за неделю
+     * @return Курс посчитанный по алгоритму
+     */
     @Override
     public Rate oneDayRate(List<Rate> listRate, LocalDate toDate) {
         Rate result = new Rate(LocalDate.now(), BigDecimal.valueOf(0));
