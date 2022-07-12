@@ -22,9 +22,22 @@ public class ParserCommands {
         String[] strCurrency = command[0].split(" ")[1].split(",");
         List<Currency> currencyList = new ArrayList<>();
         for (String str : strCurrency) {
-            currencyList.add(Currency.valueOf(str));
+            currencyList.add(Currency.valueOf(str.toUpperCase()));
         }
         return currencyList;
+    }
+
+    /**
+     * Схлопывание всех пробелов в строке
+     *
+     * @param command Входящая команда
+     * @return строка без лишних пробелов
+     */
+    public String[] parseCommandTrim(String command) {
+        return command
+                .replaceAll("( )+", " ")
+                .replaceAll("- ", "-")
+                .split("-");
     }
 
     /**

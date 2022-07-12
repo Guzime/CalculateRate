@@ -24,15 +24,16 @@ public class Command {
         this.output = output;
     }
 
-    public Command(String[] command) {
+    public Command(String command) {
         RateParser rateParser = new RateParser();
         ParserCommands parserCommands = new ParserCommands();
-        currencyList = parserCommands.parseCurrency(command);
-        dateFormat = parserCommands.parseDateFormat(command);
-        algorithm = parserCommands.parseAlgorithmParams(command);
-        output = parserCommands.parseOutputParams(command);
+        String[] commands = parserCommands.parseCommandTrim(command);
+        currencyList = parserCommands.parseCurrency(commands);
+        dateFormat = parserCommands.parseDateFormat(commands);
+        algorithm = parserCommands.parseAlgorithmParams(commands);
+        output = parserCommands.parseOutputParams(commands);
         startDate = rateParser.getLastDateFromFile(Currency.EUR.getPath());
-        toDate = parserCommands.parseDateParams(command, dateFormat, startDate);
+        toDate = parserCommands.parseDateParams(commands, dateFormat, startDate);
     }
 
     public List<Currency> getCurrencyList() {

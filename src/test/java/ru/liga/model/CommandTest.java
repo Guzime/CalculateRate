@@ -16,13 +16,13 @@ public class CommandTest extends TestCase {
         String inputCommand = "rate TRY,USD -date 22.02.2023 -alg avg";
         Command commandTest = new Command(Arrays.asList(Currency.TRY, Currency.USD),
                 WordCommand.DATE,
-                LocalDate.of(2022, 6, 17),
+                LocalDate.of(2022, 3, 5),
                 LocalDate.of(2023, 2, 22),
                 Algorithm.AVG,
                 WordCommand.LIST);
         ValidateCommands validateCommands = new ValidateCommands(inputCommand);
         validateCommands.validate();
-        Command command = new Command(inputCommand.split("-"));
+        Command command = new Command(inputCommand);
         assertThat(commandTest.toString()).isEqualTo(command.toString());
     }
 
@@ -31,13 +31,13 @@ public class CommandTest extends TestCase {
         String inputCommand = "rate TRY,USD -period week -alg mist -output graph";
         Command commandTest = new Command(Arrays.asList(Currency.TRY, Currency.USD),
                 WordCommand.PERIOD,
-                LocalDate.of(2022, 6, 17),
-                LocalDate.of(2022, 6, 24),
+                LocalDate.of(2022, 3, 5),
+                LocalDate.of(2022, 3, 12),
                 Algorithm.MIST,
                 WordCommand.GRAPH);
         ValidateCommands validateCommands = new ValidateCommands(inputCommand);
         validateCommands.validate();
-        Command command = new Command(inputCommand.split("-"));
+        Command command = new Command(inputCommand);
         assertThat(commandTest.toString()).isEqualTo(command.toString());
     }
 
@@ -46,13 +46,13 @@ public class CommandTest extends TestCase {
         String inputCommand = "rate TRY -period month -alg avg -output list";
         Command commandTest = new Command(Arrays.asList(Currency.TRY),
                 WordCommand.PERIOD,
-                LocalDate.of(2022, 6, 17),
-                LocalDate.of(2022, 7, 17),
+                LocalDate.of(2022, 3, 5),
+                LocalDate.of(2022, 4, 5),
                 Algorithm.AVG,
                 WordCommand.LIST);
         ValidateCommands validateCommands = new ValidateCommands(inputCommand);
         validateCommands.validate();
-        Command command = new Command(inputCommand.split("-"));
+        Command command = new Command(inputCommand);
         assertThat(commandTest.toString()).isEqualTo(command.toString());
     }
 

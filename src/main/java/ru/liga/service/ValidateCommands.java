@@ -12,9 +12,10 @@ import java.util.Arrays;
 
 public class ValidateCommands {
     private final String[] commands;
+    private final ParserCommands parserCommands = new ParserCommands();
 
     public ValidateCommands(String commands) {
-        this.commands = commands.split("-");
+        this.commands = parserCommands.parseCommandTrim(commands);
     }
 
     /**
@@ -46,10 +47,10 @@ public class ValidateCommands {
     private void validateOutputParams() {
         if (commands.length > 3) {
             String[] temp = commands[3].split(" ");
-            if (!temp[0].equals(WordCommand.OUTPUT.name().toLowerCase())) {
+            if (!temp[0].toUpperCase().equals(WordCommand.OUTPUT.name())) {
                 throw new IllegalStateException("Unexpected value: " + temp[0]);
             } else {
-                if (!temp[1].equals(WordCommand.LIST.name().toLowerCase()) && !temp[1].equals(WordCommand.GRAPH.name().toLowerCase())) {
+                if (!temp[1].toUpperCase().equals(WordCommand.LIST.name()) && !temp[1].toUpperCase().equals(WordCommand.GRAPH.name())) {
                     throw new IllegalStateException("Unexpected value: " + temp[1]);
                 }
             }
@@ -62,13 +63,13 @@ public class ValidateCommands {
      * @param temp Разбитая команда на массив
      */
     private void validteAlgorithmParams(String[] temp) {
-        if (!temp[0].equals(WordCommand.ALG.name().toLowerCase())) {
+        if (!temp[0].toUpperCase().equals(WordCommand.ALG.name())) {
             throw new IllegalStateException("Unexpected value: " + temp[0]);
         } else {
-            if (!temp[1].equals(Algorithm.MIST.name().toLowerCase())
-                    && !temp[1].equals(Algorithm.AVG.name().toLowerCase())
-                    && !temp[1].equals(Algorithm.LINREG.name().toLowerCase())
-                    && !temp[1].equals(Algorithm.LASTYEAR.name().toLowerCase())) {
+            if (!temp[1].toUpperCase().equals(Algorithm.MIST.name())
+                    && !temp[1].toUpperCase().equals(Algorithm.AVG.name())
+                    && !temp[1].toUpperCase().equals(Algorithm.LINREG.name())
+                    && !temp[1].toUpperCase().equals(Algorithm.LASTYEAR.name())) {
                 throw new IllegalStateException("Unexpected value: " + temp[1]);
             }
         }
@@ -80,12 +81,12 @@ public class ValidateCommands {
      * @param temp Разбитая команда на массив
      */
     private void validateDateParams(String[] temp) {
-        if (!temp[0].equals(WordCommand.DATE.name().toLowerCase()) && !temp[0].equals(WordCommand.PERIOD.name().toLowerCase())) {
+        if (!temp[0].toUpperCase().equals(WordCommand.DATE.name()) && !temp[0].toUpperCase().equals(WordCommand.PERIOD.name())) {
             throw new IllegalStateException("Unexpected value: " + temp[0]);
         }
 
-        if (temp[0].equals(WordCommand.DATE.name().toLowerCase())) {
-            if (!temp[1].equals(WordCommand.TOMORROW.name().toLowerCase())) {
+        if (temp[0].toUpperCase().equals(WordCommand.DATE.name())) {
+            if (!temp[1].toUpperCase().equals(WordCommand.TOMORROW.name())) {
                 try {
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ConstantsRate.IN_PATTERN_DT);
                     LocalDate.parse(temp[1], formatter);
@@ -95,8 +96,8 @@ public class ValidateCommands {
             }
         }
 
-        if (temp[0].equals(WordCommand.PERIOD.name().toLowerCase())) {
-            if (!temp[1].equals(WordCommand.WEEK.name().toLowerCase()) && !temp[1].equals(WordCommand.MONTH.name().toLowerCase())) {
+        if (temp[0].toUpperCase().equals(WordCommand.PERIOD.name())) {
+            if (!temp[1].toUpperCase().equals(WordCommand.WEEK.name()) && !temp[1].toUpperCase().equals(WordCommand.MONTH.name())) {
                 throw new IllegalStateException("Unexpected value: " + temp[1]);
             }
         }
@@ -108,12 +109,12 @@ public class ValidateCommands {
      * @param temp Разбитая команда на массив
      */
     private void validateCurrencyParams(String[] temp) {
-        if (!temp[0].equals(WordCommand.RATE.name().toLowerCase())) {
+        if (!temp[0].toUpperCase().equals(WordCommand.RATE.name())) {
             throw new IllegalStateException("Unexpected value: " + temp[0]);
         }
         String[] tempListCurrency = temp[1].split(",");
         for (String strCurr : tempListCurrency) {
-            if (Arrays.stream(Currency.values()).noneMatch(cur -> strCurr.equals(cur.name()))) {
+            if (Arrays.stream(Currency.values()).noneMatch(cur -> strCurr.toUpperCase().equals(cur.name()))) {
                 throw new IllegalStateException("Unexpected value: " + strCurr);
             }
         }

@@ -51,6 +51,7 @@ public class GraphUtils {
      * Returns a sample dataset.
      */
     public void setData(List<List<Rate>> rateList, List<Currency> currencyList) {
+        dataset.clear();
         for (int j = 0; j < currencyList.size(); j++) {
             List<Rate> tempRate = rateList.get(j);
             for (int i = 0; i < tempRate.size(); i++) {

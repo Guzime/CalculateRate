@@ -14,11 +14,11 @@ public class HandlerCommandTest extends TestCase {
 
     @Test
     public void testHandlerTomorrow() {
-        String commandInput = "rate TRY -date tomorrow -alg avg";
+        String commandInput = "rate try -date tomorrow -alg avg";
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
 
-        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput.split("-")));
+        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput));
 
         assertThat(showRate.convertListRatesToString(handlerCommand.call()))
                 .isEqualTo("ВС 06.03.2022 - 68,8605\n");
@@ -30,7 +30,7 @@ public class HandlerCommandTest extends TestCase {
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
 
-        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput.split("-")));
+        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput));
         assertThat(showRate.convertListRatesToString(handlerCommand.call()))
                 .isEqualTo("СБ 12.03.2022 - 71,7079\n" +
                         "ПТ 11.03.2022 - 72,6237\n" +
@@ -47,7 +47,7 @@ public class HandlerCommandTest extends TestCase {
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
 
-        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput.split("-")));
+        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput));
         assertThat(showRate.convertListRatesToString(handlerCommand.call()))
                 .isEqualTo("ВТ 20.09.2022 - 71,8573\n");
     }
@@ -58,7 +58,7 @@ public class HandlerCommandTest extends TestCase {
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
 
-        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput.split("-")));
+        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput));
         assertThat(showRate.convertListRatesToString(handlerCommand.call()))
                 .isEqualTo("ВТ 20.06.2023 - 71,8573\n");
     }
@@ -69,7 +69,7 @@ public class HandlerCommandTest extends TestCase {
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
 
-        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput.split("-")));
+        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput));
         assertThat(showRate.convertListRatesToString(handlerCommand.call()))
                 .isEqualTo("ВТ 05.04.2022 - 71,8579\n" +
                         "ПН 04.04.2022 - 71,8584\n" +
@@ -106,11 +106,11 @@ public class HandlerCommandTest extends TestCase {
 
     @Test
     public void testSomeCurrencyHandlerWeek() {
-        String commandInput = "rate TRY,USD -period week -alg avg";
+        String commandInput = "rate TRY,usd -period week -alg avg";
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
 
-        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput.split("-")));
+        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput));
         assertThat(showRate.convertListRatesToString(handlerCommand.call()))
                 .isEqualTo("СБ 12.03.2022 - 71,7079\n" +
                         "ПТ 11.03.2022 - 72,6237\n" +
@@ -135,7 +135,7 @@ public class HandlerCommandTest extends TestCase {
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
 
-        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput.split("-")));
+        HandlerCommand handlerCommand = new HandlerCommand(new HandlerListRateAVG(), new RateParser(), new Command(commandInput));
         assertThat(showRate.convertListRatesToString(handlerCommand.call()))
                 .isEqualTo(
                         "СР 22.06.2022 - 71,8573\n" +

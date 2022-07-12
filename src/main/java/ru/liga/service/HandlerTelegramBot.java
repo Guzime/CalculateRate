@@ -62,7 +62,7 @@ public class HandlerTelegramBot extends TelegramLongPollingBot {
                                 .build());
                 return;
             }
-            Command command = new Command(message.getText().split("-"));
+            Command command = new Command(message.getText());
 
             HandlerCommand handlerCommand = new HandlerCommand(
                     getHandlerListRate(command.getAlgorithm()),
@@ -85,6 +85,7 @@ public class HandlerTelegramBot extends TelegramLongPollingBot {
      */
     private void sendResultMessage(Message message, Command command, List<List<Rate>> listRate) throws org.telegram.telegrambots.meta.exceptions.TelegramApiException {
         graphUtils.setData(listRate, command.getCurrencyList());
+        System.out.println(command.getCurrencyList());
         InputFile inputFile = new InputFile(graphUtils.getCurrencyRatesAsGraph());
         if (message.hasText()) {
             logger.info("Обрабатываю сообщение - " + message.getText());

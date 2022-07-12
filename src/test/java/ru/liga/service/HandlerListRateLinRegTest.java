@@ -23,7 +23,7 @@ public class HandlerListRateLinRegTest extends TestCase {
         String commandInput = "rate USD -date 18.06.2022 -alg linreg";
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
-        List<Rate> resultRate = handlerListRateLinearRegression.toDateRate(listRate, new Command(commandInput.split("-")));
+        List<Rate> resultRate = handlerListRateLinearRegression.toDateRate(listRate, new Command(commandInput));
         assertThat(showRate.convertRatesToString(resultRate)).isEqualTo("СБ 18.06.2022 - 73,8883\n");
     }
 
@@ -33,7 +33,7 @@ public class HandlerListRateLinRegTest extends TestCase {
         String commandInput = "rate USD -date 18.07.2022 -alg linreg";
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
-        List<Rate> resultRate = handlerListRateLinearRegression.toDateRate(listRate, new Command(commandInput.split("-")));
+        List<Rate> resultRate = handlerListRateLinearRegression.toDateRate(listRate, new Command(commandInput));
         assertThat(showRate.convertRatesToString(resultRate)).isEqualTo("ПН 18.07.2022 - 73,9994\n");
     }
 
@@ -43,7 +43,7 @@ public class HandlerListRateLinRegTest extends TestCase {
         String commandInput = "rate USD -period week -alg linreg";
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
-        List<Rate> resultRate = handlerListRateLinearRegression.periodRate(listRate, new Command(commandInput.split("-")));
+        List<Rate> resultRate = handlerListRateLinearRegression.periodRate(listRate, new Command(commandInput));
         assertThat(showRate.convertRatesToString(resultRate)).isEqualTo(
                 "СБ 12.03.2022 - 74,8793\n" +
                         "ПТ 11.03.2022 - 74,8806\n" +

@@ -23,7 +23,7 @@ public class HandlerListRateMistTest extends TestCase {
         String commandInput = "rate USD -date 06.03.2022 -alg mist";
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
-        List<Rate> resultRate = handlerListRateMist.toDateRate(listRate, new Command(commandInput.split("-")));
+        List<Rate> resultRate = handlerListRateMist.toDateRate(listRate, new Command(commandInput));
         assertThat(listRate.stream()
                 .map(Rate::getRate)
                 .collect(Collectors.toList()))
@@ -36,8 +36,7 @@ public class HandlerListRateMistTest extends TestCase {
         String commandInput = "rate USD -period week -alg mist";
         ValidateCommands validateCommands = new ValidateCommands(commandInput);
         validateCommands.validate();
-        List<Rate> resultRate = handlerListRateMist.periodRate(listRate, new Command(commandInput.split("-")));
-        System.out.println(resultRate);
+        List<Rate> resultRate = handlerListRateMist.periodRate(listRate, new Command(commandInput));
         assertThat(listRate.stream()
                 .map(Rate::getRate)
                 .collect(Collectors.toList()))
